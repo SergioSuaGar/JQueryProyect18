@@ -1,0 +1,235 @@
+html, body{
+    font-family: 'Open Sans', sans-serif!important;
+}
+
+header{
+    height: 66px;
+}
+section{
+    height: 650px;
+}
+.breadcrumbIndex{
+    padding-top:25px;
+}
+.olBreadcrumb{
+    background-color:rgba(52,58,64,0.5)!important;
+    color:#dddddd!important;
+}
+.breadcrumb-item.active{
+    color:#dddddd!important;
+}
+.dropdown-item{
+    color: #dddddd!important;
+}
+.dropdown-item:hover{
+    transform: scale(1.2);
+    background-color: #fff0!important;
+}
+
+.carta{
+    color: #A4A7AA!important;
+}
+
+
+#dropdownMenuLink{
+    font-family: 'Open Sans', sans-serif!important;
+}
+.menuCarta{
+    border:none!important;
+}
+
+.card {
+    background-color: #fff0!important;
+}
+.textoIndex {
+    background-color: rgba(52,58,64,0.5)!important;
+    color: #dddddd!important;
+}
+.colorTexto{
+    color: #dddddd!important;
+}
+.carousel, .carousel-inner > .carousel-item > img {
+    max-height: 450px;
+}
+/*
+.tituloRestaurante{
+	font-size: 5.5rem;
+}
+*/
+.nombreRestaurante{
+    font-size: 2.25rem;
+}
+.cuerpoIndex {
+    height:600px!important;
+    width:100%!important;
+}
+@media (min-width: 376px) {
+    .tituloRestaurante{
+        font-size: 2.50rem!important;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .tituloRestaurante{
+        font-size: 4.5rem!important;
+    }
+    .carousel, .carousel-inner > .carousel-item > img {
+        max-height: 450px;
+        margin-top:40px;
+    }
+}
+.barra {
+    width:100%;
+    height:20px;
+    background-color: #96858F;
+}
+/* PLATOS CSS */
+
+.navPlatos {
+    background-color:#343A40!important;
+    color:#dddddd!important;
+    margin:5px;
+    padding-left:8px!important;
+}
+.margenGroup{
+    margin:30px;
+    background-color:#fff0!important;
+}
+.card-img-top{
+    width:50%!important;
+}
+.card-img{
+    width:50%;
+}
+.margenCard{
+    width:25%;
+    background-color:rgba(52,58,64,0.5)!important;
+}
+.centrarNav{
+    margin:0 auto!important;
+}
+
+.card-group .card {
+    flex:none!important;
+    margin: 0 auto;
+    margin: 40px!important;
+    border: none;
+}
+
+.sectionCarta{
+    background-image: url(../imagenes/wallpaper.jpeg);
+    background-repeat: repeat-y;
+}
+
+.fondoTransparente{
+    background-color:rgba(52,58,64,0.8)!important;
+    margin-bottom:20px;
+}
+
+@media (max-width: 612px) {
+    .navPlatos{
+        width:80px!important;
+    }
+}
+/* LOCALIZACION */
+
+.sectionLocalizacion{
+    height:auto!important;
+}
+.breadcrumbLocalizacion{
+    margin-bottom:30px;
+}
+/* MENUS */
+
+
+/* LOCALIZACION */
+/* -------------------------------------- */
+
+.sectionLocalizacion{
+    background-image: url(../imagenes/fondoIndex.jpg);
+}
+.colorFormulario {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.colorFormularioContacto {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 50px;
+    margin-top: 30px;
+}
+
+.jumbobordes{
+    border-radius: 20px !important;
+}
+
+.fondocontactos {
+    background-color: #A4A4A6;
+}
+
+.colorPTituloContacto{
+    color: #E9ECEF;
+}
+
+.colorFormularioLetras{
+    color : black!important;
+}
+
+.col_galeria_imagen{
+    width: 300px;
+    height: 300px;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.zoom {
+    cursor: zoom-in;
+}
+
+.galeriabody {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    .galeriabody {
+        padding-top: 56px;
+    }
+}
+
+.fondoSection{
+    background-image: url(../imagenes/fondoIndex.jpg);
+}
+
+.cuerpoReserva {
+    height:auto!important;
+    width:100%!important;
+}
+
+.sectionReserva{
+    height:auto!important;
+    background-image: url(../imagenes/fondoCarta.jpg);
+}
+.sectionContacto{
+    height:auto!important;
+    background-image: url(../imagenes/fondoCarta.jpg);
+}
+.sectionGaleria{
+    height:auto!important;
+    background-image: url(../imagenes/fondoCarta.jpg);
+}
+.marginRestaurante{
+    margin-top:10px;
+}
+.carousel-item{
+    height:350px!important;
+}
+.carusel{
+    height:450px;
+}
+.card-img-top{
+    width:100%!important;
+}
