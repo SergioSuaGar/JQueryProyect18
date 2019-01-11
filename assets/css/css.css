@@ -8,6 +8,8 @@ header{
 section{
     height: 650px;
 }
+
+
 .breadcrumbIndex{
     padding-top:25px;
 }
@@ -119,7 +121,7 @@ section{
 
 .sectionCarta{
     background-image: url(../imagenes/wallpaper.jpeg);
-    background-repeat: repeat-y;
+    width: 100%;
 }
 
 .fondoTransparente{

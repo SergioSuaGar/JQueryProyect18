@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
     <script src="index.js"></script>
+
     <link rel="stylesheet" href="assets/css/css.css" type="text/css">
     <title>Buscador Libros</title>
 </head>
-<body>
+<body class="sectionCarta">
    <header>
        <nav class="navbar-expand-lg navbar-dark bg-dark navbar fixed-top">
            <div class="container ">
@@ -19,10 +23,11 @@
                            <a class="nav-link" href="#"><b>BUSCADOR DE LIBROS</b></a>
                        </li>
                    </ul>
+               </div>
            </div>
        </nav>
    </header>
-   <section class="sectionCarta">
+   <section >
        <div class="align-items-center d-flex breadcrumbIndex">
            <div class="container">
                <div class="row">
@@ -34,12 +39,11 @@
                    </nav>
                    <div class="col-md-3"></div>
                    <div class="col-md-4">
-                       <input class="form-control" id="search" placeholder="Escribe el Título o Autor..." aria-label="Search">
+                       <input class="form-control" id="search" placeholder="Escribe el Título o Autor..." onkeyup="if(event.keyCode == 13)limpiarResultados()" aria-label="Search">
                    </div>
                    <div class="col-md-2">
-                       <button class="btn btn-dark" id="button" type="button" onclick="busquedaLibro()">Buscar</button>
+                       <button class="btn btn-dark" id="button" type="button" onclick="limpiarResultados()">Buscar</button>
                    </div>
-
                </div>
            </div>
        </div>
@@ -48,10 +52,41 @@
                <div class="tab-content colorTexto" id="v-pills-tabContent">
                    <div class="card-group fondoTransparente">
                        <div id="resultados"></div>
+                        <div style="width: 100%;text-align:center;">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12"></div>
+                            <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12" src="assets/imagenes/loading2.gif" id="loading" style="display:none;text-align: center !important">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12"></div>
+                        </div>
                    </div>
                </div>
            </div>
-       </div>
+           <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered " role="document">
+                   <div class="modal-content bg-dark text-white">
+                       <div class="modal-header">
+                           <h5 class="modal-title" id="tituloDetalles"></h5>
+                           <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                       <div class="modal-body">
+                           <img id="imagenDetalles" style="padding-left: 35%;padding-bottom: 5%">
+                           <p id="autorDetalles"></p>
+                           <p id="categoriaDetalles"></p>
+                           <p id="editorialDetalles"></p>
+                           <p id="fechaDetalles"></p>
+                           <p id="paginasDetalles"></p>
+                           <p id="valoracionDetalles"></p>
+                           <p id="precioDetalles"></p>
+                           <p><a href="" target="_blank" id="compraDetalles">Click para comprar</a></p>
+                           <p id="descripcionDetalles"></p>
+                       </div>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
        </div>
    </section>
    <footer>
