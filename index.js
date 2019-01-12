@@ -1,8 +1,9 @@
-// AIzaSyBeHIj8_oRG4T1KjA6YCQB8tOEh124EypA
+// KEY: AIzaSyBeHIj8_oRG4T1KjA6YCQB8tOEh124EypA
 var pagina = -10;
 var flag=false;
 var win = $(window);
 var idBuscada;
+var añadirListener=0;
 
 function busquedaLibro() {
     var valorBuscado = document.getElementById('search').value;
@@ -24,7 +25,8 @@ function busquedaLibro() {
                     '  <p class="card-text">Autor: ' + data.items[i].volumeInfo.authors + '</p>\n' +
                     '  <button type="button" class="btn btn-secondary claseDetallar" data-toggle="modal" data-target="#miModal">Detallar</button>'+
                     '	</div>');
-                document.getElementsByClassName("claseDetallar")[i].addEventListener("click", detallarLibro);
+                document.getElementsByClassName("claseDetallar")[añadirListener].addEventListener("click", detallarLibro);
+                añadirListener++;
             }
             flag=false;
             $("#loading").hide();
@@ -51,9 +53,14 @@ function detallarLibro(e){
         dataType: "json",
         success: function (data) {
             for(let i=0;i<data.items.length;i++) {
+                try{
+                    var imagenLibro = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+                }catch (e) {
+                    var imagenLibro = "assets/imagenes/imagenNo.png";
+                }
                 try {
                     $('#tituloDetalles').append(data.items[i].volumeInfo.title);
-                    $('#imagenDetalles').attr("src", data.items[i].volumeInfo.imageLinks.smallThumbnail);
+                    $('#imagenDetalles').attr("src", imagenLibro);
                     $('#autorDetalles').append("Autor: " + data.items[i].volumeInfo.authors);
                     $('#categoriaDetalles').append("Categoría: " + data.items[i].volumeInfo.categories);
                     $('#editorialDetalles').append("Editorial: " + data.items[i].volumeInfo.publisher);
@@ -65,6 +72,7 @@ function detallarLibro(e){
                     $('#compraDetalles').append("Comprar aquí");
                     $('#descripcionDetalles').append("Resumen: " + data.items[i].volumeInfo.description);
                 }catch (e) {}
+
             }
         },
         type: 'GET'
@@ -74,6 +82,7 @@ function detallarLibro(e){
 function limpiarResultados(){
     $('#resultados').empty();
     pagina = -10;
+    añadirListener=0;
     busquedaLibro();
 }
 
